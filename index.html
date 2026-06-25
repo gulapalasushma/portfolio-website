@@ -1,240 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Portfolio</title>
+
+<title>Gulapala Sushma | Portfolio</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family:Segoe UI;
 scroll-behavior:smooth;
 }
 
-/* 3D Animated Background */
 body{
-background:#020617;
+background:#050816;
 color:white;
 overflow-x:hidden;
-position:relative;
 }
 
-/* Gradient Background */
 body::before{
 content:"";
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
 background:
-radial-gradient(circle at 20% 20%, rgba(0,255,255,0.25), transparent 35%),
-radial-gradient(circle at 80% 30%, rgba(168,85,247,0.25), transparent 35%),
-radial-gradient(circle at 50% 80%, rgba(255,0,255,0.2), transparent 35%),
-linear-gradient(135deg,#020617,#0f172a,#111827);
-z-index:-3;
-}
-
-/* 3D Grid Effect */
-body::after{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:
-linear-gradient(rgba(0,255,255,0.08) 1px, transparent 1px),
-linear-gradient(90deg, rgba(168,85,247,0.08) 1px, transparent 1px);
-background-size:50px 50px;
-z-index:-2;
-animation:gridMove 15s linear infinite;
-}
-
-@keyframes gridMove{
-0%{
-transform:translateY(0);
-}
-100%{
-transform:translateY(50px);
-}
-}
-
-/* Floating Particles */
-.particle{
-position:fixed;
-width:6px;
-height:6px;
-background:#00e5ff;
-border-radius:50%;
-box-shadow:0 0 10px #00e5ff;
-animation:float 10s linear infinite;
+radial-gradient(circle at 20% 20%,#00e5ff33,transparent),
+radial-gradient(circle at 80% 30%,#a855f733,transparent),
+radial-gradient(circle at 50% 80%,#ff4fd833,transparent);
 z-index:-1;
 }
 
-@keyframes float{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-100%{
-transform:translateY(-100px);
-opacity:0;
-}
-}
+/* HEADER */
 
-
-/* Header */
 header{
 position:fixed;
-top:0;
 width:100%;
+top:0;
+
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:18px 10%;
-background:rgba(0,0,0,0.5);
+padding:20px 10%;
+
+background:rgba(0,0,0,.4);
 backdrop-filter:blur(10px);
+
 z-index:1000;
 }
 
 .logo{
-font-size:22px;
-font-weight:bold;
 color:#00e5ff;
+font-size:24px;
+font-weight:bold;
 }
 
 nav ul{
 display:flex;
-list-style:none;
 gap:20px;
+list-style:none;
 }
 
-nav ul li a{
-text-decoration:none;
+nav a{
 color:white;
-transition:0.3s;
+text-decoration:none;
 }
 
-nav ul li a:hover{
+nav a:hover{
 color:#00e5ff;
 }
 
-/* Hero */
+/* HERO */
+
 .hero{
 min-height:100vh;
+
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
+
 padding:120px 10%;
+gap:60px;
 flex-wrap:wrap;
 }
 
+.hero-text{
+flex:1;
+}
+
 .hero-text h1{
-font-size:55px;
-background:linear-gradient(90deg,#00e5ff,#a855f7,#ff4fd8);
-background-clip:text;
+font-size:60px;
+
+background:
+linear-gradient(
+90deg,
+#00e5ff,
+#a855f7);
+
+-webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-.hero-text p{
-font-size:20px;
+.hero-text h2{
 margin-top:10px;
+color:white;
+font-size:28px;
 }
 
-.card3d{
-width:300px;
-height:300px;
-animation:rotate 8s linear infinite;
+.hero-text p{
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
+color:#ddd;
 }
 
-@keyframes rotate{
-0%{transform:rotateY(0deg);}
-100%{transform:rotateY(360deg);}
+.hero-btn{
+display:inline-block;
+
+margin-top:30px;
+
+padding:14px 30px;
+
+background:
+linear-gradient(
+90deg,
+#00e5ff,
+#a855f7);
+
+border-radius:40px;
+
+color:white;
+
+text-decoration:none;
 }
 
-.card-inner{
-width:100%;
-height:100%;
-background:linear-gradient(135deg,#00e5ff,#a855f7);
-border-radius:20px;
-display:flex;
+/* TECH ICONS */
+
+.tech{
+flex:1;
+
+display:grid;
+
+grid-template-columns:
+repeat(3,120px);
+
 justify-content:center;
-align-items:center;
-flex-direction:column;
-box-shadow:0 0 30px rgba(0,229,255,0.5);
-}
-.card-inner img{
-width:150px;
-height:150px;
-border-radius:50%;
-border:3px solid white;
-object-fit:cover;
+
+gap:25px;
 }
 
-/* Sections */
+.tech-box{
+
+height:120px;
+
+background:
+rgba(255,255,255,.05);
+
+border-radius:20px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:50px;
+
+transition:.3s;
+}
+
+.tech-box:hover{
+transform:
+translateY(-10px);
+color:#00e5ff;
+}
+
+/* SECTIONS */
+
 section{
-padding:80px 10%;
+padding:90px 10%;
 }
 
 h2{
 text-align:center;
-margin-bottom:25px;
 color:#00e5ff;
+
+margin-bottom:40px;
 }
 
+/* ABOUT */
 
+.about{
+display:flex;
 
-/* Skills */
+align-items:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+}
+
+.profile{
+
+width:280px;
+
+height:280px;
+
+border-radius:20px;
+
+object-fit:cover;
+
+border:3px solid #00e5ff;
+
+box-shadow:
+0 0 30px #00e5ff55;
+}
+
+.about-box{
+
+flex:1;
+
+padding:35px;
+
+background:
+rgba(255,255,255,.05);
+
+border-radius:20px;
+
+line-height:1.8;
+}
+
+/* RESUME */
+
+.resume{
+text-align:center;
+}
+
+.resume a{
+
+padding:15px 40px;
+
+background:
+linear-gradient(
+90deg,
+#00e5ff,
+#a855f7);
+
+color:white;
+
+border-radius:40px;
+
+text-decoration:none;
+}
+
+/* SKILLS */
+
 .skills{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
+
+grid-template-columns:
+repeat(auto-fit,minmax(150px,1fr));
+
+gap:20px;
 }
 
 .skill{
-background:rgba(255,255,255,0.05);
-padding:15px;
+
+padding:20px;
+
 text-align:center;
-border-radius:10px;
-transition:0.3s;
-}
 
-.skill:hover{
-transform:translateY(-5px);
-background:rgba(0,229,255,0.1);
-}
+background:
+rgba(255,255,255,.05);
 
+border-radius:15px;
+}
 /* Roadmap */
 /* ROADMAP CSS */
-
-.box,
-.project,
-.cert,
-.timeline-box{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.1);
-box-shadow:
-0 0 20px rgba(0,229,255,0.15),
-0 0 30px rgba(168,85,247,0.15);
-transition:0.4s;
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    max-width:800px;
+    margin:auto;
 }
 
-.box:hover,
-.project:hover,
-.cert:hover,
+.timeline-box{
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-left:4px solid #00e5ff;
+    border-radius:10px;
+    transition:0.3s;
+}
+
 .timeline-box:hover{
-transform:translateY(-8px);
-box-shadow:
-0 0 25px rgba(0,229,255,0.4),
-0 0 35px rgba(168,85,247,0.4);
+    transform:translateX(10px);
+    background:rgba(0,229,255,0.1);
+}
+/* Projects */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.project{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:15px;
+}
+
+.project a{
+color:#00e5ff;
+text-decoration:none;
 }
 
 /* Certificates */
@@ -280,97 +365,230 @@ border-radius:10px;
     transform:scale(1.05);
 }
 
-/* Contact */
+
+/* CONTACT */
+
 form{
-max-width:500px;
+
+max-width:600px;
+
 margin:auto;
+
 display:flex;
+
 flex-direction:column;
-gap:12px;
+
+gap:15px;
 }
 
-input,textarea{
-padding:12px;
+input,
+textarea{
+
+padding:15px;
+
 border:none;
+
 border-radius:10px;
-background:rgba(255,255,255,0.08);
+
+background:
+rgba(255,255,255,.08);
+
 color:white;
 }
 
 button{
-padding:12px;
+
+padding:15px;
+
 border:none;
-border-radius:30px;
-background:linear-gradient(90deg,#00e5ff,#a855f7);
+
+border-radius:40px;
+
+background:
+linear-gradient(
+90deg,
+#00e5ff,
+#a855f7);
+
 color:white;
+
 cursor:pointer;
 }
 
-footer{
-text-align:center;
-padding:20px;
-background:rgba(0,0,0,0.4);
-margin-top:30px;
+.error{
+color:red;
+font-size:14px;
 }
+
+footer{
+
+padding:20px;
+
+text-align:center;
+
+margin-top:30px;
+
+background:#00000055;
+}
+
+@media(max-width:900px){
+
+.hero{
+text-align:center;
+}
+
+.tech{
+grid-template-columns:
+repeat(2,120px);
+}
+
+.hero-text h1{
+font-size:40px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-<div class="logo">GS.dev</div>
+
+<div class="logo">
+GS.dev
+</div>
 
 <nav>
+
 <ul>
+
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
+<li><a href="#resume">Resume</a></li>
 <li><a href="#skills">Skills</a></li>
-<li><a href="#roadmap">Roadmap</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#certificates">Certificates</a></li>
 <li><a href="#contact">Contact</a></li>
+
 </ul>
+
 </nav>
+
 </header>
 
-<section id="home" class="hero">
+<!-- HERO -->
+
+<section class="hero" id="home">
 
 <div class="hero-text">
+
 <h1>Gulapala Sushma</h1>
-<p>B.Tech CSE Student | Web Developer | Designer</p>
+
+<h2>B.Tech CSE Student • Web Developer</h2>
+
+<p>
+Creating modern websites and learning
+new technologies every day.
+Passionate about design, development,
+and innovation.
+</p>
+
+<a href="#contact" class="hero-btn">
+Hire Me
+</a>
+
 </div>
 
-<div class="card3d">
-<div class="card-inner">
-<img src="sushma.jpg.jpeg">
-<h3>Web Developer</h3>
+<div class="tech">
+
+<div class="tech-box">
+<i class="fab fa-html5"></i>
 </div>
+
+<div class="tech-box">
+<i class="fab fa-css3"></i>
+</div>
+
+<div class="tech-box">
+<i class="fab fa-js"></i>
+</div>
+
+<div class="tech-box">
+<i class="fab fa-java"></i>
+</div>
+
+<div class="tech-box">
+<i class="fab fa-python"></i>
+</div>
+
+<div class="tech-box">
+<i class="fab fa-github"></i>
+</div>
+
 </div>
 
 </section>
+
+<!-- ABOUT -->
 
 <section id="about">
+
 <h2>About Me</h2>
 
-<div class="box">
-    I am a Computer Science and Engineering (CSE) student with a strong interest in technology, programming, and web development. I enjoy learning new concepts, building projects, and improving my technical skills through continuous practice and hands-on experience.I have worked on projects including a Portfolio Website, E-commerce Website, and Favourite IPL Team Website, which helped me strengthen my knowledge of HTML, CSS, and JavaScript. I also actively participate in online learning platforms and certification programs to expand my knowledge and stay updated with emerging technologies.
+<div class="about">
+
+<img
+src="sushma.jpg.jpeg"
+class="profile">
+
+<div class="about-box">
+
+I am a Computer Science and Engineering (CSE) student with a strong interest in technology, programming, and web development. I enjoy learning new concepts, building projects, and improving my technical skills through continuous practice and hands-on experience.I have worked on projects including a Portfolio Website, E-commerce Website, and Favourite IPL Team Website, which helped me strengthen my knowledge of HTML, CSS, and JavaScript. I also actively participate in online learning platforms and certification programs to expand my knowledge and stay updated with emerging technologies.
 
 
 </div>
+
+</div>
+
 </section>
 
+<!-- RESUME -->
+
+<section id="resume">
+
+<h2>Resume</h2>
+
+<div class="resume">
+
+<a
+href="resume.pdf"
+download>
+
+Download Resume
+
+</a>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
 <section id="skills">
+
 <h2>Skills</h2>
 
 <div class="skills">
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">Java</div>
-<div class="skill">Python</div>
-</div>
-</section>
 
+<div class="skill">HTML 🌐</div>
+<div class="skill">CSS 🎨</div>
+<div class="skill">JavaScript ⚡</div>
+<div class="skill">Java ☕</div>
+<div class="skill">Python 🐉</div>
+
+</div>
+
+</section>
 <!-- ROADMAP SECTION -->
 <section id="roadmap">
 
@@ -380,7 +598,7 @@ margin-top:30px;
 
     <div class="timeline-box">
         <h3>🏫 SSC - 2022</h3>
-        <p><strong>Z.P.P.G.H.S chennur</strong></p>
+        <p><strong>Z.P.P.G.H.S,Chennur</strong></p>
         <p>Gudur, Nellore District</p>
         <p>Successfully completed Secondary School Education (SSC) in 2022.</p>
     </div>
@@ -403,7 +621,6 @@ margin-top:30px;
         <h3>🎓 Graduation - 2028</h3>
         <p><strong>Bachelor of Technology (B.Tech)</strong></p>
         <p>Expected Graduation Year: 2028</p>
-        <p>Preparing for a successful career in the IT industry.</p>
     </div>
 
 </div>
@@ -417,13 +634,13 @@ margin-top:30px;
 <div class="project">
 <h3>IPL-team-website</h3>
 <p> IPL-team website using HTML, CSS and JavaScript.</p>
-<a href="https://gulapalasushma.github.io/IPL-Team-Website/">View Project</a>
+<a href="https://gulapalasushma.github.io/iplteam-website/">View Project</a>
 </div>
 
 <div class="project">
 <h3>E-Commerce Website</h3>
 <p>Online shopping website with add-to-cart functionality.</p>
-<a href="https://gulapalasushma.github.io/Ecommerce-website/">View Project</a>
+<a href="https://gulapalasushma.github.io/iplteam-website/">View Project</a>
 </div>
 
 </div>
@@ -441,7 +658,7 @@ margin-top:30px;
 
 <div class="cert">
 <img src="c1.jpeg" alt="img">
-<p>Scalar Certificate</p>
+<p>scalar Certificate</p>
 </div>
 
 <div class="cert">
@@ -462,35 +679,139 @@ margin-top:30px;
         🐱 GitHub
     </a>
 
-    <a href="https://www.linkedin.com/in/sushma-gulapala-4a9722381/" target="_blank" class="social-btn">
+    <a href="https://www.linkedin.com/in/sushma-gulapala-4aa9722381/" target="_blank" class="social-btn">
         💼 LinkedIn
     </a>
 
 </div>
 
 </section>
+<!-- CONTACT -->
 
 <section id="contact">
+
 <h2>Contact Me</h2>
 
-<form onsubmit="sendMessage(event)">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea rows="5" placeholder="Your Message" required></textarea>
-<button type="submit">Send Message</button>
+<form id="contactForm">
+
+<input
+type="text"
+id="name"
+placeholder="Enter Name">
+
+<input
+type="email"
+id="email"
+placeholder="Enter Email">
+
+<textarea
+id="msg"
+rows="5"
+placeholder="Enter Message">
+</textarea>
+
+<div
+class="error"
+id="error">
+</div>
+
+<button>
+
+Send Message
+
+</button>
+
 </form>
+
 </section>
 
 <footer>
-<p>© 2026 Gulapala Sushma | All Rights Reserved</p>
+
+© 2026 Sushma Portfolio
+
 </footer>
 
 <script>
-function sendMessage(event){
-event.preventDefault();
-alert("Thank you! Your message has been sent successfully.");
+
+document
+.getElementById(
+"contactForm")
+
+.addEventListener(
+
+"submit",
+
+function(e){
+
+e.preventDefault()
+
+let name=
+document
+.getElementById("name")
+.value
+.trim()
+
+let email=
+document
+.getElementById("email")
+.value
+.trim()
+
+let msg=
+document
+.getElementById("msg")
+.value
+.trim()
+
+let error=
+document
+.getElementById("error")
+
+let pattern=
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+if(name.length<3){
+
+error.innerHTML=
+"Enter valid name"
+
+return
+
 }
+
+if(
+!pattern.test(
+email)){
+
+error.innerHTML=
+"Enter valid email"
+
+return
+
+}
+
+if(
+msg.length<10){
+
+error.innerHTML=
+"Message must contain at least 10 characters"
+
+return
+
+}
+
+error.innerHTML=""
+
+alert(
+"Message sent successfully"
+)
+
+this.reset()
+
+})
+
 </script>
 
 </body>
+
 </html>
